@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/stylesheet_login.css' %}">
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+
+<body translate="no" >
+  {% if message %}
+    <script>
+    alert('{{ message }}');
+    </script>
+  {% endif %}
+  <form autocomplete='off' class='form' action="" method="post" id="form1">
+    {% csrf_token %}
+  <div class='control'>
+    <h1>
+      Register
+    </h1>
+  </div>
+  <div class='control block-cube block-input'>
+    <input type="text" name="username" autofocus autocapitalize="none" placeholder="Username" autocomplete="username" maxlength="150" required id="id_username">
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div>
+  <div class='control block-cube block-input'>
+    <input type="password" name="password1" placeholder="Password" autocomplete="new-password" required id="id_password1">
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div><div class='control block-cube block-input'>
+      <input type="password" name="password2" placeholder="Confirm Password" autocomplete="new-password" required id="id_password2">
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+  </div><div class="btns">
+      <button class='btn block-cube block-cube-hover' type='submit' value="submit" name="Submit">
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='text'>
+      Register
+    </div>
+  </button>
+    <button class='btn block-cube block-cube-hover' onClick="location.href='/login/'" type='button' name="Login">
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='text'>
+      Back to login
+    </div>
+  </button>
+      </div>
+</form>
+</body>
+</html>

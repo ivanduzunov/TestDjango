@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <title>Personalised page</title>
+  {% load static %}
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+  <link rel="stylesheet" href="{% static 'css/stylesheet_profile.css' %}">
+</head>
+<body>
+  <a href='/logout/' type='button' name="Logout">
+  {% if message %}
+    <script>
+    alert('{{ message }}');
+    </script>
+  {% endif %}
+  <p>{{ user }}</p>
+      <div class='control block-cube profile'>
+    <div class='bg-top'>
+      <div class='bg-inner'></div>
+    </div>
+    <div class='bg-right'>
+      <div class='bg-inner'></div>
+    </div>
+        <div class='bg'>
+      <div class='bg-inner'></div>
+    </div>
+          <h1>dadada</h1>
+  </div>
+</body>
+</html>
